@@ -20,14 +20,14 @@ Basic spring lifecycle de-tour
 #### Special Note about init and destroy Method Signatures
 When using XML configuration,
 
-**Access modifier**
+* **Access modifier**
 The method can have any access modifier (public, protected, private)
 
-**Return type**
+* **Return type**
 The method can have any return type. However, "void' is most commonly used. If you give a return type just note that you will not be able to capture the return value. As a result, "void" is commonly used.
 
-**Method name**
+* **Method name**
 The method can have any method name.
 
-**Arguments**
+* **Arguments**
 The method can not accept any arguments. The method should be no-arg.
