@@ -46,7 +46,8 @@ For "prototype" scoped beans, Spring does not call the destroy method.  Gasp!
 ```
 
 2. The prototype scoped beans _MUST_ implement the DisposableBean interface. This interface defines a "destory()" method.
-```public class HpLaptop implements ILaptop, DisposableBean {
+```
+public class HpLaptop implements ILaptop, DisposableBean {
  
 	...
 	
@@ -59,15 +60,16 @@ For "prototype" scoped beans, Spring does not call the destroy method.  Gasp!
 ```
 
 3. The spring configuration must be updated to use the destroy-method of "destroy".
-```<bean id="myHpLaptop"
- 		class="com.lifecycle.xmlconfiguration.LaptopService"
- 		init-method="initStuff"
- 		destroy-method="destroy"
- 		scope="prototype">	
- 		
- 		<!-- setup setter injection -->
-		<property name="laptopService" ref="theLaptopService"></property>
- 	</bean>
+```
+<bean id="myHpLaptop"
+	class="com.lifecycle.xmlconfiguration.LaptopService"
+ 	init-method="initStuff"
+ 	destroy-method="destroy"
+ 	scope="prototype">	
+	
+ 	<!-- setup setter injection -->
+	<property name="laptopService" ref="theLaptopService"></property>
+</bean>
 ```
 
 # Dependency for running the application
